@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="icon" href="./assets/images/favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <title>VortexDev</title>
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <a href="./index.html" class="logo">
+                    <img src="./assets/images/logo.png" alt="logo">
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="./services.html">SERVICIOS</a></li>
+                        <li><a href="./projects.html">PROYECTOS</a></li>
+                        <li><a href="#">NOSOTROS</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="contact-button">
+                    <span>CONTACTO</span>
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-container">
+                    <div class="hero-info">
+                        <h1>DESARROLLAMOS<br>PAGINAS WEB<br><span id="dynamic-word" class="highlight">MODERNAS</span></h1>
+                        <p>Cada detalle importa cuando el objetivo es destacar, conectar con tus clientes<br>y fortalecer tu presencia digital.</p>
+                        <!-- En esta parte van los dos botones -->
+                        <div class="hero-buttons">
+                            <a href="#" class="boton boton-building">CREAMOS TU WEB</a>
+                            <a href="#" class="boton boton-portafolio">PORTAFOLIO</a>
+                        </div>
+                    </div>
+                    <div class="hero-right">
+                        <div class="network-animation">
+                            <canvas id="networkCanvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- What we do -->
+
+            <section class="what-we-do">
+                <div class="vortex-bg"></div>
+                <div class="vortex-sm"></div>
+                <div class="what-we-do-container">
+                    <h2>LO QUE HACEMOS</h2>
+                    <div class="services-showcase">
+                        <div class="services-menu">
+                            <button class="service-tab active"
+                                data-service="web">
+                                DESARROLLO WEB
+                            </button>
+                            <button class="service-tab"
+                                data-service="mobile">
+                                APLICACIONES MOVILES
+                            </button>
+                            <button class="service-tab"
+                                data-service="saas">
+                                SaaS
+                            </button>
+                            <button class="service-tab"
+                                data-service="infra">
+                                INFRAESTRUCTURA TI
+                            </button>
+                            <button class="service-tab"
+                                data-service="ai">
+                                AGENTES DE IA Y CHATBOTS
+                            </button>
+                            <button class="service-tab"
+                                data-service="automation">
+                                AUTOMATIZACION
+                            </button>
+                        </div>
+
+                        <div class="service-content">
+                            <div class="service-panel active"
+                                id="web">
+                                <p>
+                                    Diseñamos y desarrollamos páginas web modernas,
+                                    rápidas y optimizadas para convertir visitantes en
+                                    clientes. Creamos experiencias digitales que reflejan
+                                    la identidad de tu marca, mejoran tu presencia online
+                                    y ayudan a generar nuevas oportunidades de negocio.
+                                </p>
+                                <ul>
+                                    <li>Landing Pages</li>
+                                    <li>Sitios Corporativos</li>
+                                    <li>Tiendas Online</li>
+                                    <li>SEO Técnico</li>
+                                    <li>Diseño Responsive</li>
+                                </ul>
+                            </div>
+                            <div class="service-panel"
+                                id="mobile">
+                                <p>
+                                    Desarrollamos aplicaciones móviles intuitivas,
+                                    escalables y enfocadas en la experiencia del usuario.
+                                    Creamos soluciones para Android e iOS que permiten
+                                    conectar empresas con sus clientes, optimizar procesos
+                                    y ofrecer servicios desde cualquier lugar.
+                                </p>
+                                <ul>
+                                    <li>Android</li>
+                                    <li>iOS</li>
+                                    <li>Integración con APIs</li>
+                                    <li>Push Notifications</li>
+                                    <li>Panel Administrativo</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-panel"
+                                id="saas">
+                                <p>
+                                    Construimos plataformas SaaS seguras y escalables
+                                    preparadas para crecer junto a tu negocio. Diseñamos
+                                    sistemas accesibles desde cualquier dispositivo que
+                                    facilitan la gestión de usuarios, servicios,
+                                    suscripciones y operaciones empresariales.
+                                </p>
+                                <ul>
+                                    <li>Multiusuario</li>
+                                    <li>Roles y Permisos</li>
+                                    <li>Dashboards</li>
+                                    <li>Facturación</li>
+                                    <li>Cloud Hosting</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-panel"
+                                id="infra">
+                                <p>
+                                    Implementamos y administramos entornos tecnológicos
+                                    confiables que garantizan disponibilidad, seguridad y
+                                    rendimiento. Ayudamos a las empresas a construir una
+                                    infraestructura sólida que soporte su crecimiento y
+                                    reduzca riesgos operativos.
+                                </p>
+                                <ul>
+                                    <li>Linux y Windows</li>
+                                    <li>Virtualización</li>
+                                    <li>Backups</li>
+                                    <li>Monitoreo</li>
+                                    <li>Seguridad</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-panel"
+                                id="ai">
+                                <p>
+                                    Integramos asistentes inteligentes capaces de atender
+                                    consultas, automatizar tareas y mejorar la experiencia
+                                    del cliente. Utilizamos inteligencia artificial para
+                                    crear soluciones que optimizan tiempos de respuesta y
+                                    aumentan la eficiencia de los procesos.
+                                </p>
+                                <ul>
+                                    <li>Agentes de IA</li>
+                                    <li>Chatbots IA</li>
+                                    <li>WhatsApp</li>
+                                    <li>Automatización Conversacional</li>
+                                    <li>Bases de Conocimiento</li>
+                                    <li>Atención al Cliente</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-panel"
+                                id="automation">
+                                <p>
+                                    Automatizamos procesos repetitivos para que tu equipo
+                                    pueda enfocarse en actividades de mayor valor.
+                                    Diseñamos flujos de trabajo inteligentes que reducen
+                                    errores, mejoran la productividad y optimizan la
+                                    operación diaria de tu negocio.
+                                </p>
+                                <ul>
+                                    <li>Workflows</li>
+                                    <li>Integraciones</li>
+                                    <li>Ventas</li>
+                                    <li>Notificaciones</li>
+                                    <li>Procesos Empresariales</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technologies -->
+            <section class="technologies">
+                <article class="logos">
+                    <h2 class="technologies-title">TECNOLOGÍAS BACKEND</h2>
+                    <div class="logos-slide">
+                        <div class="tech-item">
+                            <img src="./assets/images/backend/nodejs-icon.svg"alt="node.js">
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/backend/python-icon.svg"alt="python">
+                            <span>Python</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/backend/expressjs-icon.svg"alt="express.js">
+                            <span>Express.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/backend/mysql-icon.svg"alt="mysql">
+                            <span>MySQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/backend/docker-icon.svg"alt="docker">
+                            <span>Docker</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/backend/postgresql-icon.svg"alt="postgresql">
+                            <span>PostgreSQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/backend/djangoproject-icon.svg"alt="django">
+                            <span>Django</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/backend/kubernetes-icon.svg"alt="kubernetes">
+                            <span>Kubernetes</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/backend/graphql-icon.svg"alt="graphql">
+                            <span>GraphQL</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="logos reverse">
+                    <h2 class="technologies-title">TECNOLOGÍAS FRONTEND</h2>
+                    <div class="logos-slide">
+                        <div class="tech-item">
+                            <img src="./assets/images/frontend/w3_html5-icon.svg"alt="html">
+                            <span>HTML</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/frontend/w3_css-icon~old.svg"alt="css">
+                            <span>CSS</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/frontend/javascript-icon.svg"alt="javascript">
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/frontend/typescriptlang-icon.svg"alt="typescript">
+                            <span>TypeScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/frontend/reactjs-icon.svg"alt="react">
+                            <span>ReactJS</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/frontend/getbootstrap-icon.svg"alt="bootstrap">
+                            <span>BootStrap</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/frontend/tailwindcss-icon.svg"alt="tailwind">
+                            <span>Tailwind</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/frontend/angular-icon.svg"alt="angular">
+                            <span>Angular</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="./assets/images/frontend/vuejs-icon.svg"alt="vue">
+                            <span>Vue</span>
+                        </div>
+                    </div>
+                </article>
+                <script>
+                    document
+                    .querySelectorAll(".logos-slide")
+                    .forEach((slide) => {
+
+                        const copy =
+                            slide.cloneNode(true);
+
+                        slide.parentElement
+                            .appendChild(copy);
+
+                    });
+                </script>
+            </section>
+
+            <!-- Why VortexDev -->
+
+            <section class="why-vortex">
+                <div class="why-vortex-container">
+                    <div class="why-vortex-info">
+                        <h2 class="reveal reveal-up">
+                            ¿Por qué elegir
+                            Vortex<span>Dev</span>?
+                        </h2>
+                        <p class="reveal reveal-up delay-1">
+                        Elegir el aliado tecnológico adecuado puede marcar la diferencia entre adaptarse al mercado o liderarlo. Nuestro compromiso es comprender la visión de tu negocio y transformarla en soluciones innovadoras, escalables y orientadas a generar resultados reales.
+                        </p>
+                    </div>
+                    <div class="why-vortex-image reveal reveal-right delay-2">
+                        <img
+                            src="./assets/images/why-vortexdev2.png"
+                            alt="Beneficios VortexDev"
+                        >
+                    </div>
+                </div>
+            </section>
+
+            <!-- Process -->
+
+            <section class="process">
+                <div class="process-container">
+                    <h2>Tu proyecto, paso a paso</h2>
+                    <div class="process-timeline">
+                        <div class="process-step reveal-process">
+                            <div class="step-circle">01</div>
+                            <div class="step-icon">💡</div>
+                            <h3>Cuéntanos tu idea</h3>
+                            <p>
+                                Analizamos tus objetivos,
+                                necesidades y visión.
+                            </p>
+                        </div>
+                        <div class="process-step reveal-process">
+                            <div class="step-circle">02</div>
+                            <div class="step-icon">🤝</div>
+                            <h3>Reunión estratégica</h3>
+                            <p>
+                                Definimos el alcance,
+                                funcionalidades y plan.
+                            </p>
+                        </div>
+                        <div class="process-step reveal-process">
+                            <div class="step-circle">03</div>
+                            <div class="step-icon">📐</div>
+                            <h3>Diseño y prototipo</h3>
+                            <p>
+                                Creamos la experiencia
+                                visual y funcional.
+                            </p>
+                        </div>
+                        <div class="process-step reveal-process">
+                            <div class="step-circle">04</div>
+                            <div class="step-icon">⚙️</div>
+                            <h3>Desarrollo</h3>
+                            <p>
+                                Construimos la solución
+                                con seguimiento continuo.
+                            </p>
+                        </div>
+                        <div class="process-step reveal-process">
+                            <div class="step-circle">05</div>
+                            <div class="step-icon">✓</div>
+                            <h3>Revisión final</h3>
+                            <p>
+                                Ajustamos y validamos
+                                cada detalle.
+                            </p>
+                        </div>
+                        <div class="process-step reveal-process">
+                            <div class="step-circle">06</div>
+                            <div class="step-icon">🚀</div>
+                            <h3>Lanzamiento</h3>
+                            <p>
+                                Publicamos y acompañamos
+                                el crecimiento.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Form -->
+
+            <section class="contact-form">
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h2>Contactanos</h2>
+                        <p>
+                            Cada gran proyecto comienza con una conversación. Cuéntanos tu idea, tus objetivos o los desafíos de tu negocio, y descubre cómo podemos ayudarte a convertirlos en resultados reales.
+                        </p>
+                        <div class="contact-benefits">
+                            <div class="benefit">✓ Soluciones personalizadas</div>
+                            <div class="benefit">✓ Tecnología moderna</div>
+                            <div class="benefit">✓ Calidad y seguridad</div>
+                            <div class="benefit">✓ Soporte continuo</div>
+                            <div class="benefit">✓ Escalabilidad</div>
+                            <div class="benefit">✓ Resultados orientados al negocio</div>
+                        </div>
+                        <div class="contact-data">
+                            <div class="contact-item">
+                                <img
+                                    src="./assets/images/flags/Flag_of_Colombia.svg"
+                                    class="flag"
+                                    alt="Colombia">
+                                <div>
+                                    <strong>Colombia</strong>
+                                    <p>+57 320 829 1613</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <img
+                                    src="./assets/images/flags/Flag_of_Argentina.svg"
+                                    class="flag"
+                                    alt="Argentina">
+                                <div>
+                                    <strong>Argentina</strong>
+                                    <p>+54 9 11 6117-3398</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <img
+                                    src="./assets/images/flags/Flag_of_the_United_States.svg"
+                                    class="flag"
+                                    alt="USA">
+                                <div>
+                                    <strong>USA</strong>
+                                    <p>+1 (XXX) XXX-XXXX</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <span class="mail-icon">✉</span>
+                                <div>
+                                    <strong>Correo</strong>
+                                    <p>contacto@vortexdev.io</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <h3>Agenda una consulta gratuita</h3>
+                        <form>
+                            <label>Nombre</label>
+                            <input type="text" placeholder="Nombre">
+                            <label>Empresa / Organización</label>
+                            <input type="text" placeholder="Empresa">
+                            <label>Correo electrónico</label>
+                            <input type="email" placeholder="Correo">
+                            <label>Teléfono</label>
+                            <input type="tel" placeholder="Teléfono">
+                            <label>Mensaje</label>
+                            <textarea placeholder="Cuéntanos sobre tu proyecto"></textarea>
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        <script src="./javascript/changing-word.js"></script>
+        <script src="./javascript/network-hero.js"></script>
+        <script src="./javascript/what-we-do.js"></script>
+        <script src="./javascript/why-vortexdev.js"></script>
+        <script src="./javascript/process.js"></script>
+
+        <!-- Footer -->
+
+        <footer class="footer">
+
+            <div class="footer-container">
+
+                <!-- Empresa -->
+
+                <div class="footer-company">
+
+                    <div class="footer-logo">
+                        <img src="./assets/images/logo_2.png" alt="VortexDev">
+                    </div>
+
+                    <p class="footer-slogan">
+                        Construyendo el futuro, una solución a la vez.
+                    </p>
+
+                    <div class="footer-global">
+                        <span>🌎</span>
+                        <p>Soluciones tecnológicas para Latinoamérica y Estados Unidos.</p>
+                    </div>
+
+                    <!-- <div class="footer-trust">
+                        <span>🚀</span>
+                        <p>Innovación, calidad y crecimiento.</p>
+                    </div> -->
+
+                    <div class="footer-contact">
+
+                        <div class="footer-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <h4>Presencia internacional</h4>
+                                <p>
+                                    🇨🇴 Colombia<br>
+                                    🇦🇷 Argentina<br>
+                                    🇺🇸 Estados Unidos
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="footer-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <p>contacto@vortexdev.io</p>
+                        </div>
+
+                        <div class="footer-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <p>🇦🇷 +54 9 XXX XXX XXXX</p>
+                                <p>🇨🇴 +57 XXX XXX XXXX</p>
+                                <p>🇺🇸 +1 XXX XXX XXXX</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Navegacion -->
+
+                <div class="footer-links">
+
+                    <h3>Navegación</h3>
+
+                    <a href="#home">Inicio</a>
+                    <a href="#services">Servicios</a>
+                    <a href="#why-vortex">¿Por qué VortexDev?</a>
+                    <a href="#process">Tu proyecto paso a paso</a>
+                    <a href="#contact">Contacto</a>
+
+                </div>
+
+                <!-- Servicios -->
+
+                <div class="footer-services">
+
+                    <h3>Servicios</h3>
+
+                    <a href="#">Desarrollo Web</a>
+                    <a href="#">Aplicaciones Móviles</a>
+                    <a href="#">Software Empresarial</a>
+                    <a href="#">Infraestructura TI</a>
+                    <a href="#">Automatización</a>
+                    <a href="#">Integración con IA</a>
+                    <a href="#">Consultoría Tecnológica</a>
+
+                </div>
+
+                <!-- Redes -->
+
+                <div class="footer-social">
+
+                    <h3>Redes</h3>
+
+                    <a href="#"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i>Instagram</a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i>Facebook</a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i>X / Twitter</a>
+                    <a href="#"><i class="fa-brands fa-github"></i>GitHub</a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    © 2026 VortexDev. Todos los derechos reservados |
+                    Política de privacidad |
+                    Términos y condiciones |
+                    Desarrollado con 💙 por VortexDev
+                </p>
+            </div>
+
+        </footer>
+    </body>
+</html>

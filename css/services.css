@@ -1,0 +1,249 @@
+.hero-services {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 100px 80px;
+}
+
+.hero-services::before {
+    content: "";
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 60px solid rgba(122, 145, 227, 0.12);
+    pointer-events: none;
+}
+
+.hero-services-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.breadcrumb {
+    display: inline-block;
+    color: #7a91e3;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.hero-services h1 {
+    color: #F0F0FA;
+    font-size: 50px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.highlight-accent {
+    color: #7a91e3;
+    font-weight: 600;
+}
+
+.hero-services p {
+    color: rgba(240, 240, 250, 0.75);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.services-quicknav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.services-quicknav a {
+    padding: 12px 26px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.3s all;
+}
+
+.services-quicknav a:hover,
+.services-quicknav a.active {
+    background: #2a57a4;
+    border-color: #2a57a4;
+}
+
+/* Detalle de servicios */
+
+.services-detail-container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 100px;
+}
+
+.service-block {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    padding: 60px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    scroll-margin-top: 30px;
+}
+
+.service-block.reverse {
+    flex-direction: row-reverse;
+}
+
+.service-block:last-child {
+    border-bottom: none;
+}
+
+.service-icon {
+    flex-shrink: 0;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a3978, #2a57a4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #fff;
+    box-shadow: 0 20px 45px rgba(42, 87, 164, 0.3);
+}
+
+.service-number {
+    display: block;
+    color: #7a91e3;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.service-text h2 {
+    color: #F0F0FA;
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.service-text > p {
+    color: rgba(240, 240, 250, 0.75);
+    font-family: "Roboto", sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 650px;
+    margin-bottom: 25px;
+}
+
+.service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.service-tags span {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.5px;
+    color: #cbd5e1;
+}
+
+.service-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #7a91e3;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    transition: 0.3s all;
+}
+
+.service-cta i {
+    transition: 0.3s all;
+}
+
+.service-cta:hover {
+    color: #a3b6f0;
+}
+
+.service-cta:hover i {
+    transform: translateX(5px);
+}
+
+/* CTA final */
+
+.services-cta {
+    text-align: center;
+    padding: 120px 100px;
+}
+
+.services-cta h2 {
+    color: #F0F0FA;
+    font-size: 2.6rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.services-cta p {
+    color: rgba(240, 240, 250, 0.7);
+    font-size: 1.05rem;
+    max-width: 550px;
+    margin: 0 auto 40px;
+}
+
+.services-cta-button {
+    display: inline-block;
+    padding: 20px 50px;
+    background-color: #2a57a4;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    transition: 0.3s all;
+}
+
+.services-cta-button:hover {
+    background-color: #163c83;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .hero-services,
+    .services-detail-container,
+    .services-cta {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .hero-services h1 {
+        font-size: 34px;
+    }
+
+    .service-block,
+    .service-block.reverse {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .service-icon {
+        width: 90px;
+        height: 90px;
+        font-size: 2rem;
+    }
+}
