@@ -1,0 +1,9 @@
+node_modules/
+
+# El .env real nunca se sube; .env.example sí, como plantilla
+.env
+.env.local
+.env.*.local
+!.env.example
+
+*.log

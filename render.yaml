@@ -1,0 +1,85 @@
+# ═══════════════════════════════════════════════════════════════════════
+#  Coldevia — Blueprint de Render
+# ═══════════════════════════════════════════════════════════════════════
+#
+#  Define los dos servicios del proyecto de una sola vez:
+#
+#    coldevia-api  → el backend Express (Node)
+#    coldevia-web  → el frontend React ya construido (sitio estático)
+#
+#  CÓMO USARLO
+#  ───────────
+#  1. En Render: New + → Blueprint → conectá este repositorio.
+#     Render lee este archivo y propone crear los dos servicios.
+#  2. Al aplicarlo, pide los valores marcados como `sync: false`
+#     (los que no se versionan porque son secretos o dependen del entorno).
+#  3. Después del primer despliegue, completá las dos URLs cruzadas:
+#     · En `coldevia-api`  → ALLOWED_ORIGINS = la URL de coldevia-web
+#     · En `coldevia-web`  → VITE_API_URL    = la URL de coldevia-api
+#     y volvé a desplegar `coldevia-web` (Vite fija esa variable en el build).
+#
+#  Los pasos detallados están en README.md → "Publicar el sitio".
+# ═══════════════════════════════════════════════════════════════════════
+
+services:
+  # ── Backend: API de contacto ─────────────────────────────────────────
+  - type: web
+    name: coldevia-api
+    runtime: node
+    plan: free
+    region: oregon
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm start
+    # Render reinicia el servicio si esta ruta deja de responder.
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Los Postgres gestionados (Neon, Supabase) exigen TLS.
+      - key: DATABASE_SSL
+        value: "true"
+      - key: NOTIFY_EMAIL
+        value: cristhianmelo.ruiz@gmail.com
+      # Cambiar por un remitente del dominio propio cuando esté verificado
+      # en Resend, p. ej. "Coldevia <contacto@coldevia.com>".
+      - key: FROM_EMAIL
+        value: Coldevia <onboarding@resend.dev>
+
+      # ── Valores que Render pide al aplicar el blueprint ──────────────
+      # Cadena de conexión de Neon (usar la del pooler).
+      - key: DATABASE_URL
+        sync: false
+      # Clave de API de Resend.
+      - key: RESEND_API_KEY
+        sync: false
+      # Dominios autorizados a llamar la API, separados por coma.
+      # Después del primer despliegue: la URL de coldevia-web.
+      - key: ALLOWED_ORIGINS
+        sync: false
+
+  # ── Frontend: sitio estático ─────────────────────────────────────────
+  - type: web
+    name: coldevia-web
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    autoDeploy: true
+    envVars:
+      # URL pública del backend. Vite la incrusta EN EL BUILD, así que al
+      # cambiarla hay que volver a desplegar este servicio.
+      - key: VITE_API_URL
+        sync: false
+    routes:
+      # El sitio usa React Router: cualquier ruta debe servir index.html,
+      # o entrar directo a /servicios devolvería 404.
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      # Los assets con hash en el nombre pueden cachearse indefinidamente.
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable

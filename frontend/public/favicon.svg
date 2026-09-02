@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!--
+    Favicon de Coldevia: los tres anillos anidados del logo, con el hueco
+    abierto hacia la derecha que sugiere la "C". Mismos colores del ícono:
+    gris grafito, azul grisáceo y azul de marca.
+  -->
+  <rect width="64" height="64" rx="14" fill="#08152F"/>
+  <g fill="none" stroke-linecap="round">
+    <!-- Anillo exterior — gris grafito del logo -->
+    <path d="M 44.5 15.6 A 21 21 0 1 0 44.5 48.4"
+          stroke="#5b7290" stroke-width="6" opacity="0.85"/>
+    <!-- Anillo intermedio — azul de marca -->
+    <path d="M 43.2 21.9 A 14.5 14.5 0 1 0 43.2 42.1"
+          stroke="#2a57a4" stroke-width="6"/>
+    <!-- Núcleo — azul luz -->
+    <circle cx="32" cy="32" r="6" fill="#7a91e3" stroke="none"/>
+  </g>
+</svg>

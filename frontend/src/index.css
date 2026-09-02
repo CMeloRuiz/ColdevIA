@@ -1,0 +1,280 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════════════
+   COLDEVIA — Sistema de diseño
+   ═══════════════════════════════════════════════════════════════════════
+
+   PALETA
+   La marca define seis colores. Trabajar solo con esos seis aplana el
+   diseño: todo termina siendo el mismo azul sobre el mismo azul. Acá esos
+   colores son las *anclas* de una escala más amplia, construida en tres
+   familias que cumplen roles distintos:
+
+     · SUPERFICIES (abyss → navy-600): del casi-negro con dejo azul hasta el
+       navy claro. Permite que cada sección tenga su propio fondo sin salirse
+       de la familia.
+     · AZUL DE MARCA (accent-700 → accent-300): el #2a57a4 con sus vecinos,
+       para acciones, énfasis y luz.
+     · NEUTROS DEL LOGO (graphite, steel): el gris #3a3a3a y el azul grisáceo
+       #5b7290 del ícono, ascendidos a color de pleno derecho. Son el
+       contrapunto desaturado que evita la monotonía azul.
+
+   Anclas oficiales de marca marcadas con ◆.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+@theme {
+  /* ── Superficies ──────────────────────────────────────────────────── */
+  --color-abyss: #030812; /* casi negro, con dejo azul — nunca negro plano */
+  --color-void: #050d1f;
+  --color-navy-950: #08152f; /* ◆ marca */
+  --color-navy-900: #0b1836; /* ◆ marca */
+  --color-navy-850: #0e1e45;
+  --color-navy-800: #102552; /* ◆ marca */
+  --color-navy-700: #16336d;
+  --color-navy-600: #1c4189;
+
+  /* ── Azul de marca ────────────────────────────────────────────────── */
+  --color-accent-700: #1a3978; /* ◆ el azul del "IA" del wordmark */
+  --color-accent-600: #23498c;
+  --color-accent: #2a57a4; /* ◆ marca */
+  --color-accent-400: #3b6bc0;
+  --color-accent-300: #5480d4;
+
+  /* ── Luz / highlight ──────────────────────────────────────────────── */
+  --color-highlight: #7a91e3; /* ◆ marca */
+  --color-highlight-200: #a3b3ec;
+  --color-highlight-100: #cdd6f6;
+
+  /* ── Neutros del logo ─────────────────────────────────────────────── */
+  --color-graphite: #3a3a3a; /* ◆ gris oscuro del ícono */
+  --color-graphite-600: #55565a;
+  --color-steel: #5b7290; /* ◆ azul grisáceo del ícono */
+  --color-steel-400: #8296ae;
+  --color-steel-200: #b3c1d1;
+
+  /* ── Tinta ────────────────────────────────────────────────────────── */
+  --color-ink: #f0f0fa; /* ◆ marca */
+  --color-ink-dim: #c4cade;
+  --color-ink-muted: #8b93ad;
+
+  /* ── Tipografía ───────────────────────────────────────────────────────
+     Fraunces (serif variable) para titulares: aporta el carácter editorial
+     que a Outfit —una geométrica correcta pero neutra— le falta en tamaños
+     grandes. Su alto contraste entre trazos gruesos y finos da autoridad, y
+     su eje óptico ajusta el dibujo según el tamaño, así que un h1 no es
+     simplemente un h3 agrandado.
+     Outfit se mantiene para lectura e interfaz: es la voz que la marca ya
+     tenía y garantiza continuidad.
+     JetBrains Mono aparece en etiquetas, numerales y metadatos: le da al
+     sitio una voz técnica que corresponde a una empresa de software y
+     separa claramente "dato" de "prosa".
+     ─────────────────────────────────────────────────────────────────── */
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-body: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* ── Sombras y curvas ─────────────────────────────────────────────── */
+  --shadow-lift: 0 24px 60px -28px rgb(3 8 18 / 0.9);
+  --shadow-panel: 0 40px 90px -40px rgb(3 8 18 / 1);
+  --shadow-glow: 0 0 70px -18px rgb(42 87 164 / 0.6);
+
+  --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0.05, 0.36, 1);
+
+  --animate-marquee: marquee 46s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 46s linear infinite;
+  --animate-orbit: orbit 26s linear infinite;
+  --animate-orbit-reverse: orbit-reverse 34s linear infinite;
+  --animate-pulse-ring: pulse-ring 3.4s ease-out infinite;
+  /* Giro del planeta en "Acerca de": dos minutos por vuelta. Tan lento que
+     no se percibe el movimiento cuadro a cuadro, pero la imagen deja de
+     estar muerta y no compite con la lectura. */
+  --animate-globe: globe-spin 120s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+@keyframes orbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes orbit-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(0.85); opacity: 0.65; }
+  70%, 100% { transform: scale(1.55); opacity: 0; }
+}
+@keyframes globe-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-abyss text-ink font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Profundidad de fondo. En una capa fija propia y no con
+     `background-attachment: fixed`, que provoca artefactos de repintado al
+     hacer scroll y penaliza el rendimiento en móviles. El body no crea
+     contexto de apilamiento, así que z-index:-1 la deja detrás de todo. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background-image:
+      radial-gradient(60rem 42rem at 12% -8%, rgb(28 65 137 / 0.42), transparent 62%),
+      radial-gradient(46rem 34rem at 96% 4%, rgb(42 87 164 / 0.22), transparent 58%),
+      radial-gradient(52rem 40rem at 50% 108%, rgb(26 57 120 / 0.3), transparent 60%);
+  }
+
+  /* Grano. Un degradado limpio se lee como plantilla; una capa mínima de
+     ruido le da textura de impresión y esconde el banding de los halos. */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+
+  /* Titulares. `opsz` alto pide el dibujo de display: más contraste y
+     remates más finos. El interletrado se cierra a medida que crece. */
+  h1, h2, h3 {
+    @apply font-display text-ink;
+    font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: clamp(2.6rem, 1.1rem + 6.2vw, 5.75rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+  }
+  h2 {
+    font-size: clamp(2rem, 1.15rem + 3.4vw, 3.5rem);
+    line-height: 1.04;
+    letter-spacing: -0.028em;
+  }
+  h3 {
+    font-size: clamp(1.2rem, 1rem + 0.9vw, 1.6rem);
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+  }
+
+  /* Subtítulos e interfaz vuelven a la sans. */
+  h4, h5, h6 {
+    @apply font-body font-semibold tracking-tight text-ink;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  ::-webkit-scrollbar { width: 11px; height: 11px; }
+  ::-webkit-scrollbar-track { background: var(--color-abyss); }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--color-navy-700), var(--color-accent-700));
+    border-radius: 9999px;
+    border: 3px solid var(--color-abyss);
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
+  html { scrollbar-color: var(--color-navy-700) var(--color-abyss); }
+
+  :focus-visible {
+    outline: 2px solid var(--color-highlight);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-[88rem] px-5 sm:px-8 lg:px-14;
+  }
+
+  /* ── Superficies ──────────────────────────────────────────────────────
+     Tres niveles distintos, no una única tarjeta repetida. El grosor del
+     borde y la opacidad del fondo comunican jerarquía por sí solos.
+     ─────────────────────────────────────────────────────────────────── */
+
+  /* Nivel 1 — soporte. Casi se funde con el fondo. */
+  .surface-sunken {
+    @apply rounded-[14px] border border-white/6 bg-white/[0.015];
+  }
+
+  /* Nivel 2 — contenido estándar. */
+  .surface {
+    @apply rounded-[18px] border border-white/8 bg-white/[0.028] backdrop-blur-[2px];
+  }
+
+  /* Nivel 3 — protagonista. Reservado para el elemento más importante de
+     cada sección: el plan recomendado, el proyecto destacado, el CTA. */
+  .surface-raised {
+    @apply rounded-[22px] border border-highlight/22 bg-gradient-to-b from-accent/14 via-white/[0.03] to-transparent;
+    box-shadow: var(--shadow-panel);
+  }
+
+  /* Etiqueta técnica: mono, versalitas, muy espaciada. */
+  .label-mono {
+    @apply font-mono text-[10px] font-medium uppercase tracking-[0.28em] text-steel-400 sm:text-[11px];
+  }
+
+  /* Filete de sección: una línea que nace y muere en transparente. */
+  .rule {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/12 to-transparent;
+  }
+
+  /* Énfasis en titulares. Un solo recurso, y de uso medido: la palabra
+     clave en azul luz, no un degradado en cada sección. */
+  .accent-word {
+    @apply text-highlight;
+    font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 0;
+  }
+
+  /* Cursiva editorial de Fraunces: para una sola palabra por titular. */
+  .accent-italic {
+    @apply italic text-highlight;
+    font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 1;
+  }
+}
+
+@layer utilities {
+  /* Corta el texto en la línea correcta sin viudas. */
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  /* Máscara para revelados por línea de texto. */
+  .mask-line { overflow: hidden; display: block; }
+}
+
+/* Respeta a quien pidió menos movimiento en su sistema operativo. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
